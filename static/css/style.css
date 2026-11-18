@@ -1,0 +1,1287 @@
+
+/* GENERAL */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #080f20;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* NAVIGATION */
+.secure-navbar {
+    background: #080f20;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar-brand {
+    font-size: 23px;
+    color: #ffffff !important;
+}
+
+.brand-icon {
+    margin-right: 5px;
+}
+
+.navbar-nav .nav-link {
+    color: #b9c5d8;
+    margin-left: 12px;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #55aaff;
+}
+
+/* HERO SECTION */
+.hero-section {
+    padding: 110px 0;
+    background:
+        radial-gradient(circle at 80% 40%, #123c70 0%, transparent 35%),
+        linear-gradient(135deg, #080f20, #101e38);
+}
+
+.hero-badge {
+    display: inline-block;
+    color: #62b5ff;
+    background: rgba(44, 144, 255, 0.12);
+    border: 1px solid rgba(80, 170, 255, 0.3);
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: #55aaff;
+}
+
+.hero-description {
+    color: #b8c5d8;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 570px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.hero-buttons .btn {
+    border-radius: 8px;
+    padding: 13px 22px;
+}
+
+.hero-buttons .btn-primary {
+    background: #1683ed;
+    border-color: #1683ed;
+}
+
+.hero-buttons .btn-primary:hover {
+    background: #0868c9;
+}
+
+.hero-buttons .btn-outline-light:hover {
+    color: #080f20;
+}
+
+.hero-note {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 28px;
+    color: #aabbd0;
+    font-size: 13px;
+}
+
+.hero-note span {
+    color: #35d39a;
+}
+
+/* HERO VISUAL */
+.security-visual {
+    position: relative;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(100,180,255,0.2);
+    border-radius: 24px;
+    padding: 55px 25px;
+    margin: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+
+.visual-glow {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: #087cf0;
+    opacity: 0.15;
+    filter: blur(80px);
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.security-icon {
+    position: relative;
+    font-size: 95px;
+    margin-bottom: 20px;
+}
+
+.security-visual h3 {
+    position: relative;
+    font-weight: bold;
+}
+
+.security-visual p {
+    position: relative;
+    color: #b9c7db;
+    line-height: 1.7;
+}
+
+.security-status {
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: rgba(0,0,0,0.25);
+    border-radius: 30px;
+    color: #b9c7db;
+    font-size: 12px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #35d39a;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+/* SECTION HEADINGS */
+.section-label {
+    display: inline-block;
+    color: #55aaff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: #aebbd0;
+}
+
+/* FEATURES */
+.why-section {
+    background: #0c1730;
+}
+
+.feature-link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.feature-card {
+    background: #142440;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 35px 25px;
+    transition: 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: #248ef0;
+    box-shadow: 0 15px 35px rgba(0,100,220,0.15);
+}
+
+.feature-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.feature-card h4 {
+    color: #ffffff;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #aebbd0;
+    line-height: 1.7;
+}
+
+.feature-action {
+    display: inline-block;
+    color: #55aaff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* SECURITY TIPS */
+.tips-section {
+    background: #101e38;
+}
+
+.tip-card {
+    height: 100%;
+    padding: 20px;
+    background: #172b4b;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+    color: #d5dfed;
+}
+
+.tip-card span {
+    color: #35d39a;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* FOOTER */
+.secure-footer {
+    background: #080f20;
+    padding: 45px 0 25px;
+    color: #ffffff;
+}
+
+.secure-footer h4 {
+    font-weight: bold;
+}
+
+.secure-footer p {
+    color: #aebbd0;
+    margin-top: 10px;
+}
+
+.footer-line {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 25px 0;
+}
+
+.secure-footer small {
+    color: #8494aa;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 991px) {
+    .hero-section {
+        padding: 75px 0;
+    }
+
+    .security-visual {
+        margin: 45px 0 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-note {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .security-visual {
+        padding: 40px 18px;
+    }
+}
+
+/* =================================
+   PASSWORD CHECKER PAGE
+================================= */
+
+.checker-page {
+    background: #080f20;
+    min-height: 100vh;
+}
+
+/* Page Heading */
+.checker-heading {
+    padding: 65px 20px 35px;
+    background:
+        radial-gradient(circle at center, #123c70 0%, transparent 65%);
+}
+
+.checker-heading h1 {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 800;
+    margin: 12px 0;
+}
+
+.checker-heading p {
+    color: #b9c7db;
+    font-size: 16px;
+}
+
+/* Main Container */
+.checker-container {
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+/* Checker Card */
+.checker-card {
+    background: #142440;
+    border: 1px solid rgba(100, 180, 255, 0.18);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.25);
+}
+
+.checker-card-header {
+    margin-bottom: 35px;
+}
+
+.checker-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.checker-card-header h2 {
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.checker-card-header p {
+    color: #aebbd0;
+}
+
+/* Input */
+.checker-card .form-label {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.checker-input-group .form-control {
+    background: #0c1730;
+    border: 1px solid #344966;
+    color: #ffffff;
+    padding: 13px;
+}
+
+.checker-input-group .form-control:focus {
+    background: #0c1730;
+    color: #ffffff;
+    border-color: #248ef0;
+    box-shadow: 0 0 0 3px rgba(36, 142, 240, 0.15);
+}
+
+.checker-input-group .form-control::placeholder {
+    color: #8192aa;
+}
+
+.checker-toggle-btn {
+    background: #1683ed;
+    color: #ffffff;
+    border: none;
+    padding: 0 20px;
+}
+
+.checker-toggle-btn:hover {
+    background: #0868c9;
+    color: #ffffff;
+}
+
+.password-tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    color: #aebbd0;
+}
+
+.password-tools strong {
+    color: #ffffff;
+}
+
+.clear-btn {
+    color: #ff7777;
+    border: 1px solid #a94a58;
+}
+
+.clear-btn:hover {
+    background: #a93242;
+    color: #ffffff;
+}
+
+/* Strength Meter */
+.strength-section {
+    background: #0c1730;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.checker-progress {
+    height: 16px;
+    background: #263a57;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.checker-progress .progress-bar {
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+.strength-text {
+    color: #55aaff;
+    font-weight: bold;
+}
+
+/* Requirements */
+.requirements-section h5 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.requirements-description {
+    color: #aebbd0;
+    font-size: 14px;
+}
+
+.checker-requirements .list-group-item {
+    background: #0c1730;
+    border: 1px solid #263a57;
+    color: #d5dfed;
+    padding: 13px 16px;
+}
+
+/* Recommendations */
+.checker-recommendation {
+    background: #1b3556;
+    border: 1px solid #315b88;
+    color: #d5e8ff;
+    border-radius: 10px;
+    padding: 17px;
+}
+
+/* Privacy Notice */
+.privacy-notice {
+    background: rgba(22, 131, 237, 0.10);
+    border: 1px solid rgba(85, 170, 255, 0.25);
+    border-radius: 10px;
+    padding: 17px;
+    color: #79bdff;
+}
+
+.privacy-notice p {
+    color: #b9c7db;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .checker-heading {
+        padding: 45px 15px 25px;
+    }
+
+    .checker-heading h1 {
+        font-size: 30px;
+    }
+
+    .checker-card {
+        padding: 25px 18px;
+    }
+
+    .checker-card-header h2 {
+        font-size: 23px;
+    }
+
+    .password-tools {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+}
+
+/* =================================
+   PASSWORD GENERATOR PAGE
+================================= */
+
+.generator-page {
+    background: #080f20;
+    min-height: 100vh;
+}
+
+/* Page Heading */
+.generator-heading {
+    padding: 65px 20px 35px;
+    background:
+        radial-gradient(circle at center, #123c70 0%, transparent 65%);
+}
+
+.generator-heading h1 {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 800;
+    margin: 12px 0;
+}
+
+.generator-heading p {
+    color: #b9c7db;
+    font-size: 16px;
+}
+
+/* Main Container */
+.generator-container {
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+/* Generator Card */
+.generator-card {
+    background: #142440;
+    border: 1px solid rgba(100, 180, 255, 0.18);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.25);
+}
+
+.generator-card-header {
+    margin-bottom: 35px;
+}
+
+.generator-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.generator-card-header h2 {
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.generator-card-header p {
+    color: #aebbd0;
+}
+
+/* Generated Password Input */
+.generator-card .form-label {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.generator-input-group .form-control {
+    background: #0c1730;
+    border: 1px solid #344966;
+    color: #ffffff;
+    padding: 13px;
+}
+
+.generator-input-group .form-control:focus {
+    background: #0c1730;
+    color: #ffffff;
+    border-color: #248ef0;
+    box-shadow: 0 0 0 3px rgba(36, 142, 240, 0.15);
+}
+
+.generator-input-group .form-control::placeholder {
+    color: #8192aa;
+}
+
+.generator-copy-btn {
+    background: #1683ed;
+    color: #ffffff;
+    border: none;
+    padding: 0 22px;
+}
+
+.generator-copy-btn:hover {
+    background: #0868c9;
+    color: #ffffff;
+}
+
+.generator-hint {
+    display: block;
+    color: #aebbd0;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* Password Length */
+.generator-option-box {
+    background: #0c1730;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.length-badge {
+    background: #173e69;
+    color: #79bdff;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.generator-card .form-range {
+    cursor: pointer;
+}
+
+.generator-card .form-range::-webkit-slider-thumb {
+    background: #1683ed;
+}
+
+.generator-card .form-range::-moz-range-thumb {
+    background: #1683ed;
+}
+
+.length-labels {
+    display: flex;
+    justify-content: space-between;
+    color: #8192aa;
+    font-size: 12px;
+}
+
+/* Password Options */
+.generator-options h5 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.generator-options > .generator-hint {
+    margin-bottom: 15px;
+}
+
+.generator-check {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    background: #0c1730;
+    border: 1px solid #263a57;
+    border-radius: 9px;
+    padding: 13px 15px;
+    margin-bottom: 10px;
+}
+
+.generator-check .form-check-input {
+    background-color: #142440;
+    border-color: #71849e;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.generator-check .form-check-input:checked {
+    background-color: #1683ed;
+    border-color: #1683ed;
+}
+
+.generator-check label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    color: #d5dfed;
+    cursor: pointer;
+}
+
+.generator-check label span {
+    color: #79bdff;
+    font-size: 13px;
+}
+
+/* Generate Button */
+.generate-main-btn {
+    background: #1683ed;
+    color: #ffffff;
+    border: none;
+    border-radius: 9px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.generate-main-btn:hover {
+    background: #0868c9;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Security Notice */
+.generator-security-notice {
+    background: rgba(22, 131, 237, 0.10);
+    border: 1px solid rgba(85, 170, 255, 0.25);
+    border-radius: 10px;
+    padding: 17px;
+    color: #79bdff;
+}
+
+.generator-security-notice p {
+    color: #b9c7db;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .generator-heading {
+        padding: 45px 15px 25px;
+    }
+
+    .generator-heading h1 {
+        font-size: 30px;
+    }
+
+    .generator-card {
+        padding: 25px 18px;
+    }
+
+    .generator-card-header h2 {
+        font-size: 23px;
+    }
+
+    .generator-check label {
+        flex-wrap: wrap;
+    }
+
+}
+
+/* =====================================
+   SECUREPASS - SECURITY TIPS PAGE
+===================================== */
+
+.tips-page {
+    background: #080f1f;
+    color: #e5eaf5;
+    min-height: 100vh;
+}
+
+/* Main Container */
+
+.tips-container {
+    max-width: 1100px;
+    padding-top: 55px;
+    padding-bottom: 65px;
+}
+
+/* Page Heading */
+
+.tips-heading {
+    max-width: 750px;
+    margin: 0 auto 45px;
+}
+
+.tips-main-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.tips-badge {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.12);
+    color: #60a5fa;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+}
+
+.tips-heading h1 {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.tips-heading p {
+    color: #a8b4c9;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Tips Grid */
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+/* Individual Cards */
+
+.tips-card {
+    background: #111c31;
+    border: 1px solid #253550;
+    border-radius: 16px;
+    padding: 25px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.tips-card:hover {
+    transform: translateY(-4px);
+    border-color: #3b82f6;
+}
+
+/* Card Header */
+
+.tips-card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.tips-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: 13px;
+    font-size: 25px;
+}
+
+.tips-card-header h2 {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.tips-card-header p {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+/* Tips List */
+
+.tips-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tips-list li {
+    position: relative;
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 11px 10px 11px 28px;
+    border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.tips-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 3px;
+    top: 11px;
+    color: #34d399;
+    font-weight: 800;
+}
+
+.tips-list li.warning-tip::before {
+    content: "!";
+    color: #f87171;
+}
+
+.tips-list li.warning-tip {
+    color: #fca5a5;
+}
+
+/* Important Notice */
+
+.tips-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.notice-icon {
+    font-size: 30px;
+    flex-shrink: 0;
+}
+
+.tips-notice h3 {
+    color: #fbbf24;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.tips-notice p {
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+    .tips-container {
+        padding-top: 35px;
+        padding-bottom: 45px;
+    }
+
+    .tips-heading h1 {
+        font-size: 29px;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-card {
+        padding: 20px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .tips-heading h1 {
+        font-size: 25px;
+    }
+
+    .tips-card-header h2 {
+        font-size: 17px;
+    }
+
+    .tips-notice {
+        padding: 18px;
+        gap: 12px;
+    }
+
+}
+
+/* =====================================
+   SECUREPASS - ABOUT PAGE
+===================================== */
+
+.about-page {
+    background: #080f1f;
+    color: #e5eaf5;
+    min-height: 100vh;
+}
+
+/* Main Container */
+
+.about-container {
+    max-width: 1000px;
+    padding-top: 55px;
+    padding-bottom: 65px;
+}
+
+/* Heading */
+
+.about-heading {
+    max-width: 750px;
+    margin: 0 auto 45px;
+}
+
+.about-main-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.about-badge {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.12);
+    color: #60a5fa;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+}
+
+.about-heading h1 {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.about-heading p {
+    color: #a8b4c9;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* About Cards */
+
+.about-card {
+    background: #111c31;
+    border: 1px solid #253550;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+.about-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.about-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: 12px;
+    font-size: 23px;
+}
+
+.about-section-heading h2 {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Project Description */
+
+.about-card > p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+/* Feature Grid */
+
+.about-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.about-feature {
+    background: #17243a;
+    border: 1px solid #2a3b56;
+    border-radius: 13px;
+    padding: 22px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.about-feature:hover {
+    transform: translateY(-4px);
+    border-color: #3b82f6;
+}
+
+.about-feature-icon {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.about-feature h3 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.about-feature p {
+    color: #a8b4c9;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Technologies */
+
+.technology-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.technology-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background: #17243a;
+    border: 1px solid #2a3b56;
+    border-radius: 10px;
+    padding: 15px 18px;
+}
+
+.technology-name {
+    color: #60a5fa;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.technology-description {
+    color: #a8b4c9;
+    font-size: 14px;
+    text-align: right;
+}
+
+/* Project Goal */
+
+.about-goal {
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 16px;
+    padding: 35px 25px;
+    margin-top: 30px;
+}
+
+.about-goal-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.about-goal h2 {
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.about-goal p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+    .about-container {
+        padding-top: 35px;
+        padding-bottom: 45px;
+    }
+
+    .about-heading h1 {
+        font-size: 30px;
+    }
+
+    .about-card {
+        padding: 22px;
+    }
+
+    .about-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .about-heading h1 {
+        font-size: 26px;
+    }
+
+    .about-section-heading h2 {
+        font-size: 19px;
+    }
+
+    .technology-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .technology-description {
+        text-align: left;
+    }
+
+}
+/* DASHBOARD CARD HOVER EFFECT */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+}
+/* MOBILE PASSWORD HISTORY TABLE */
+@media (max-width: 576px) {
+
+    #historyTable td,
+    .table thead th {
+        font-size: 12px;
+        padding: 6px 4px;
+    }
+
+}

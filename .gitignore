@@ -1,0 +1,15 @@
+# Python virtual environment
+.venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Local database
+securepass.db
+
+# Environment variables and secrets
+.env
+
+# Editor settings
+.vscode/
