@@ -15,103 +15,105 @@
     >
 
     <!-- Project CSS -->
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}">
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
 </head>
 
 <body>
 
-    
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark secure-navbar">
-    <div class="container">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark secure-navbar">
+        <div class="container">
 
-        <a class="navbar-brand fw-bold" href="/">
-            🛡️ SecurePass
-        </a>
+            <a class="navbar-brand fw-bold" href="/">
+                🛡️ SecurePass
+            </a>
 
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link active" href="/dashboard">Dashboard</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/dashboard">Dashboard</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="/password-checker">Password Checker</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/password-checker">Password Checker</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="/password-generator">Generator</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/password-generator">Generator</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="/security-tips">Awareness</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/security-tips">Awareness</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
 
-            </ul>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-
-
+    </nav>
 
     <!-- Dashboard -->
     <div class="container py-5">
 
-        
-<div class="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+        <!-- Dashboard Heading and Actions -->
+        <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
 
-    <div>
-        <h2 class="fw-bold">Security Dashboard</h2>
+            <div>
+                <h2 class="fw-bold">Security Dashboard</h2>
 
-        <p class="text-muted mb-0">
-            View your password-checking activity and security results.
-        </p>
-    </div>
+                <p class="text-muted mb-0">
+                    View your password-checking activity and security results.
+                </p>
+            </div>
 
-    <button
-        class="btn btn-primary"
-        onclick="loadDashboard()">
-        🔄 Refresh Data
-    </button>
+            <button
+                type="button"
+                class="btn btn-primary"
+                onclick="loadDashboard()"
+            >
+                🔄 Refresh Data
+            </button>
 
-    <button 
-      class="btn btn-danger" 
-      onclick="clearPasswordHistory()">
-      🗑️ Clear History
-    </button>
+            <button
+                type="button"
+                class="btn btn-danger"
+                onclick="clearPasswordHistory()"
+            >
+                🗑️ Clear History
+            </button>
 
-    <button
-      type="button"
-      class="btn btn-success"
-      onclick="exportPasswordHistory()">
-      📥 Export CSV
-    </button>
+            <button
+                type="button"
+                class="btn btn-success"
+                onclick="exportPasswordHistory()"
+            >
+                📥 Export CSV
+            </button>
 
-</div>
-
-
+        </div>
 
         <!-- Summary Cards -->
         <div class="row g-4 mb-5">
@@ -146,43 +148,43 @@
 
         </div>
 
+        <!-- Recent Activity -->
+        <div class="card shadow-sm border-0 mb-5">
 
-        <!-- Password History -->
+            <div class="card-header bg-dark text-white py-3">
+                <h5 class="mb-0">Recent Activity</h5>
+            </div>
 
-<!-- Recent Activity Summary -->
-<div class="card shadow-sm border-0 mb-5">
+            <div class="card-body">
 
-    <div class="card-header bg-dark text-white py-3">
-        <h5 class="mb-0">Recent Activity</h5>
-    </div>
+                <div id="recentActivity">
+                    <p class="text-muted mb-0">
+                        Loading recent activity...
+                    </p>
+                </div>
 
-    <div class="card-body">
+            </div>
 
-        <div id="recentActivity">
-            <p class="text-muted mb-0">
-                Loading recent activity...
-            </p>
         </div>
 
-    </div>
+        <!-- Password Strength Chart -->
+        <div class="card shadow-sm border-0 mb-5">
 
-</div>
+            <div class="card-header bg-dark text-white py-3">
+                <h5 class="mb-0">Password Strength Distribution</h5>
+            </div>
 
-<!-- Password Strength Chart -->
-<div class="card shadow-sm border-0 mb-5">
+            <div class="card-body">
 
-    <div class="card-header bg-dark text-white py-3">
-        <h5 class="mb-0">Password Strength Distribution</h5>
-    </div>
+                <div class="mx-auto w-100" style="max-width: 450px;">
+                    <canvas id="strengthChart"></canvas>
+                </div>
 
-    <div class="card-body">
-        <div class="mx-auto w-100" style="max-width: 450px;">
-            <canvas id="strengthChart"></canvas>
+            </div>
+
         </div>
-    </div>
 
-</div>
-
+        <!-- Password Checking History -->
         <div class="card shadow-sm border-0">
 
             <div class="card-header bg-dark text-white py-3">
@@ -194,63 +196,70 @@
                 <p id="loadingMessage" class="text-muted">
                     Loading password history...
                 </p>
-                <!-- Search and Filter Controls -->
-<div class="row g-3 mb-4">
 
-    <div class="col-md-6">
-        <input
-            type="text"
-            id="historySearch"
-            class="form-control"
-            placeholder="🔍 Search by date or password strength..."
-        >
-    </div>
+                <!-- Search and Strength Filter -->
+                <div class="row g-3 mb-4">
 
-    <div class="col-md-6">
-        <select id="strengthFilter" class="form-select">
-            <option value="All">All Password Strengths</option>
-            <option value="Strong">Strong</option>
-            <option value="Medium">Medium</option>
-            <option value="Weak">Weak</option>
-        </select>
-    </div>
+                    <div class="col-md-6">
+                        <input
+                            type="text"
+                            id="historySearch"
+                            class="form-control"
+                            placeholder="🔍 Search by date or password strength..."
+                        >
+                    </div>
 
-</div>
-<!-- Date Range Filter -->
-<div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <select id="strengthFilter" class="form-select">
+                            <option value="All">All Password Strengths</option>
+                            <option value="Strong">Strong</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Weak">Weak</option>
+                        </select>
+                    </div>
 
-    <div class="col-md-5">
-        <label for="startDate" class="form-label">
-            Start Date
-        </label>
-        <input
-            type="date"
-            id="startDate"
-            class="form-control"
-        >
-    </div>
+                </div>
 
-    <div class="col-md-5">
-        <label for="endDate" class="form-label">
-            End Date
-        </label>
-        <input
-            type="date"
-            id="endDate"
-            class="form-control"
-        >
-    </div>
+                <!-- Date Range Filter -->
+                <div class="row g-3 mb-4">
 
-    <div class="col-md-2 d-flex align-items-end">
-        <button
-            id="clearDateFilter"
-            class="btn btn-outline-secondary w-100">
-            Clear Dates
-        </button>
-    </div>
+                    <div class="col-md-5">
+                        <label for="startDate" class="form-label">
+                            Start Date
+                        </label>
 
-</div>
+                        <input
+                            type="date"
+                            id="startDate"
+                            class="form-control"
+                        >
+                    </div>
 
+                    <div class="col-md-5">
+                        <label for="endDate" class="form-label">
+                            End Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="endDate"
+                            class="form-control"
+                        >
+                    </div>
+
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button
+                            type="button"
+                            id="clearDateFilter"
+                            class="btn btn-outline-secondary w-100"
+                        >
+                            Clear Dates
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- History Table -->
                 <div class="table-responsive">
 
                     <table class="table table-hover align-middle">
@@ -261,7 +270,9 @@
                                 <th>Date and Time</th>
                                 <th>Password Length</th>
                                 <th>Criteria Met</th>
-                                <th style="min-width: 110px; white-space: nowrap;">Strength</th>
+                                <th style="min-width: 110px; white-space: nowrap;">
+                                    Strength
+                                </th>
                             </tr>
                         </thead>
 
@@ -269,28 +280,33 @@
                         </tbody>
 
                     </table>
-                    <!-- Pagination Controls -->
-<div class="d-flex justify-content-between align-items-center mt-3">
 
-    <button
-        id="previousPage"
-        class="btn btn-outline-dark btn-sm"
-        disabled>
-        Previous
-    </button>
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-between align-items-center mt-3">
 
-    <span id="pageInfo" class="text-muted">
-        Page 1
-    </span>
+                        <button
+                            type="button"
+                            id="previousPage"
+                            class="btn btn-outline-dark btn-sm"
+                            disabled
+                        >
+                            Previous
+                        </button>
 
-    <button
-        id="nextPage"
-        class="btn btn-outline-dark btn-sm"
-        disabled>
-        Next
-    </button>
+                        <span id="pageInfo" class="text-muted">
+                            Page 1
+                        </span>
 
-</div>
+                        <button
+                            type="button"
+                            id="nextPage"
+                            class="btn btn-outline-dark btn-sm"
+                            disabled
+                        >
+                            Next
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -299,17 +315,52 @@
 
     </div>
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Dashboard JavaScript -->
-
-<!-- Chart.js Library -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <script>
+
         let strengthChart = null;
 
-        async function loadDashboard() {
+        // Normalize text for reliable comparison and searching.
+        function normalizeText(value) {
+            return String(value ?? "")
+                .normalize("NFKC")
+                .replace(/\s+/g, " ")
+                .trim()
+                .toLowerCase();
+        }
 
+        // Return the correct Bootstrap badge class.
+        function getStrengthBadgeClass(strength) {
+
+            const normalizedStrength = normalizeText(strength);
+
+            if (normalizedStrength === "strong") {
+                return "badge bg-success";
+            }
+
+            if (normalizedStrength === "medium") {
+                return "badge bg-warning text-dark";
+            }
+
+            if (normalizedStrength === "weak") {
+                return "badge bg-danger";
+            }
+
+            return "badge bg-secondary";
+        }
+
+        // Dashboard data.
+        let passwordHistory = [];
+        let currentRecords = [];
+        let currentPage = 1;
+
+        const recordsPerPage = 5;
+
+        // Load Dashboard.
+        async function loadDashboard() {
 
             const loadingMessage =
                 document.getElementById("loadingMessage");
@@ -317,11 +368,12 @@
             const historyTable =
                 document.getElementById("historyTable");
 
+            loadingMessage.textContent =
+                "Loading password history...";
+
             try {
 
-                const response = await fetch(
-                    "/api/password-history"
-                );
+                const response = await fetch("/api/password-history");
 
                 const data = await response.json();
 
@@ -329,476 +381,589 @@
                     throw new Error("Could not load password history.");
                 }
 
-                const history = data.history;
-                // Display Recent Activity
-const recentActivity = document.getElementById("recentActivity");
+                passwordHistory = Array.isArray(data.history)
+                    ? data.history
+                    : [];
 
-recentActivity.replaceChildren();
+                // Recent Activity.
+displayRecentActivity(passwordHistory);
 
-const recentRecords = history.slice(0, 5);
+// Summary Cards.
+updateSummaryCards(passwordHistory, data.total_records);
 
-if (recentRecords.length === 0) {
-    const message = document.createElement("p");
-    message.className = "text-muted mb-0";
-    message.textContent = "No recent activity yet.";
-    recentActivity.appendChild(message);
-} else {
-    recentRecords.forEach(item => {
-        const row = document.createElement("div");
-        row.className = "d-flex justify-content-between align-items-center border-bottom py-3 flex-wrap gap-2";
+// Reset Pagination.
+currentPage = 1;
 
-        const details = document.createElement("div");
+// Update History Table.
+loadingMessage.textContent =
+    passwordHistory.length > 0
+        ? "Password history loaded successfully."
+        : "No password history available yet.";
 
-        const title = document.createElement("strong");
-        title.textContent = `Password check #${item.id}`;
+// Display Password History.
+filterHistory();
 
-        const date = document.createElement("small");
-        date.className = "text-muted d-block";
-        date.textContent = item.checked_at;
-
-        details.appendChild(title);
-        details.appendChild(date);
-
-        const badge = document.createElement("span");
-        badge.className = "badge " + (
-            item.strength === "Strong" ? "bg-success" :
-            item.strength === "Medium" ? "bg-warning text-dark" :
-            "bg-danger"
-        );
-
-        badge.textContent = item.strength;
-
-        row.appendChild(details);
-        row.appendChild(badge);
-
-        recentActivity.appendChild(row);
-    });
+// Update Chart Separately.
+try {
+    updateStrengthChart(passwordHistory);
+} catch (chartError) {
+    console.error("Strength chart error:", chartError);
 }
-
-                // Update summary cards
-                document.getElementById("totalChecks").textContent =
-                    data.total_records;
-
-                document.getElementById("strongCount").textContent =
-                    history.filter(item =>
-                        item.strength === "Strong"
-                    ).length;
-
-// Calculate password strength totals
-const strongTotal = history.filter(
-    item => item.strength === "Strong"
-).length;
-
-const mediumTotal = history.filter(
-    item => item.strength === "Medium"
-).length;
-
-const weakTotal = history.filter(
-    item => item.strength === "Weak"
-).length;
-
-
-// Create Doughnut Chart
-const chartCanvas = document.getElementById("strengthChart");
-
-// Destroy the previous chart before creating a new one
-if (strengthChart) {
-    strengthChart.destroy();
-}
-
-strengthChart = new Chart(chartCanvas, {
-
-    type: "doughnut",
-
-    data: {
-
-        labels: ["Strong", "Medium", "Weak"],
-
-        datasets: [{
-
-            data: [strongTotal, mediumTotal, weakTotal],
-
-            backgroundColor: [
-                "#198754",
-                "#ffc107",
-                "#dc3545"
-            ],
-
-            borderWidth: 2
-
-        }]
-
-    },
-
-    options: {
-
-        responsive: true,
-
-        plugins: {
-
-            legend: {
-                position: "bottom"
-            },
-
-            title: {
-                display: true,
-                text: "Password Strength Results"
-            }
-
-        }
-
-    }
-
-});
-
-
-                document.getElementById("mediumCount").textContent =
-                    history.filter(item =>
-                        item.strength === "Medium"
-                    ).length;
-
-                document.getElementById("weakCount").textContent =
-                    history.filter(item =>
-                        item.strength === "Weak"
-                    ).length;
-
-
-                // Clear previous table records
-                historyTable.replaceChildren();
-
-                if (history.length === 0) {
-
-                    loadingMessage.textContent =
-                        "No password history available yet.";
-
-                    return;
-                }
-
-                loadingMessage.textContent =
-                    "Password history loaded successfully.";
-
-
-                // Display history records
-                
-// Search and Filter Password History
-// Pagination Settings
-let currentPage = 1;
-const recordsPerPage = 5;
-let currentRecords = [];
-
-function renderHistory(records) {
-
-    historyTable.replaceChildren();
-
-    currentRecords = records;
-
-    const totalPages = Math.max(
-        1,
-        Math.ceil(currentRecords.length / recordsPerPage)
-    );
-
-    if (currentPage > totalPages) {
-        currentPage = totalPages;
-    }
-
-    const startIndex = (currentPage - 1) * recordsPerPage;
-    const endIndex = startIndex + recordsPerPage;
-
-    const pageRecords = currentRecords.slice(
-        startIndex,
-        endIndex
-    );
-
-    if (currentRecords.length === 0) {
-
-        const row = document.createElement("tr");
-        const cell = document.createElement("td");
-
-        cell.colSpan = 5;
-        cell.className = "text-center text-muted py-3";
-        cell.textContent = "No matching password history found.";
-
-        row.appendChild(cell);
-        historyTable.appendChild(row);
-
-    } else {
-
-        pageRecords.forEach(item => {
-
-            const row = document.createElement("tr");
-
-            const values = [
-                item.id,
-                item.checked_at,
-                item.password_length,
-                item.criteria_met + " / 5"
-            ];
-
-            values.forEach(value => {
-
-                const cell = document.createElement("td");
-                cell.textContent = value;
-
-                row.appendChild(cell);
-
-            });
-
-            // Strength badge
-            const strengthCell = document.createElement("td");
-            strengthCell.style.minWidth = "110px";
-            strengthCell.style.whiteSpace = "nowrap";
-            const badge = document.createElement("span");
-
-            badge.classList.add(
-                "badge",
-                item.strength === "Strong"
-                    ? "bg-success"
-                    : item.strength === "Medium"
-                        ? "bg-warning text-dark"
-                        : "bg-danger"
-            );
-
-            badge.textContent = item.strength;
-
-            strengthCell.appendChild(badge);
-            row.appendChild(strengthCell);
-
-            historyTable.appendChild(row);
-
-        });
-
-    }
-
-    // Update pagination information
-    document.getElementById("pageInfo").textContent =
-        `Page ${currentPage} of ${totalPages}`;
-
-    document.getElementById("previousPage").disabled =
-        currentPage === 1;
-
-    document.getElementById("nextPage").disabled =
-        currentPage === totalPages;
-
-}
-
-
-// Previous Page Button
-document.getElementById("previousPage").addEventListener("click", function () {
-
-    if (currentPage > 1) {
-        currentPage--;
-        renderHistory(currentRecords);
-    }
-
-});
-
-// Next Page Button
-document.getElementById("nextPage").addEventListener("click", function () {
-
-    const totalPages = Math.ceil(
-        currentRecords.length / recordsPerPage
-    );
-
-    if (currentPage < totalPages) {
-        currentPage++;
-        renderHistory(currentRecords);
-    }
-
-});
-
-
-
-// Get search and filter elements
-const historySearch = document.getElementById("historySearch");
-const strengthFilter = document.getElementById("strengthFilter");
-
-
-function filterHistory() {
-
-    const searchText = historySearch.value.toLowerCase();
-    const selectedStrength = strengthFilter.value;
-
-    const startDate =
-        document.getElementById("startDate").value;
-
-    const endDate =
-        document.getElementById("endDate").value;
-
-    currentPage = 1;
-
-    const filteredHistory = history.filter(item => {
-
-        const matchesSearch =
-            String(item.id).includes(searchText) ||
-            item.checked_at.toLowerCase().includes(searchText) ||
-            item.strength.toLowerCase().includes(searchText);
-
-        const matchesStrength =
-            selectedStrength === "All" ||
-            item.strength === selectedStrength;
-
-        const recordDate = item.checked_at.substring(0, 10);
-        console.log("Record date:", recordDate);
-console.log("Selected start date:", startDate);
-console.log("Selected end date:", endDate);
-
-        const matchesStartDate =
-            !startDate || recordDate >= startDate;
-
-        const matchesEndDate =
-            !endDate || recordDate <= endDate;
-
-        return (
-            matchesSearch &&
-            matchesStrength &&
-            matchesStartDate &&
-            matchesEndDate
-        );
-
-    });
-
-    renderHistory(filteredHistory);
-}
-
-
-
-// Listen for search and filter changes
-historySearch.oninput = filterHistory;
-strengthFilter.onchange = filterHistory;
-// Date Filter Events
-document.getElementById("startDate").onchange = filterHistory;
-document.getElementById("endDate").onchange = filterHistory;
-
-// Clear Date Filters
-document.getElementById("clearDateFilter").onclick = function () {
-
-    document.getElementById("startDate").value = "";
-    document.getElementById("endDate").value = "";
-
-    filterHistory();
-
-};
-
-// Display all records initially
-renderHistory(history);
-
 
             } catch (error) {
 
                 loadingMessage.textContent =
                     "Error loading dashboard. Please try again.";
 
-                console.error(error);
+                console.error("Dashboard loading error:", error);
+
+            }
+        }
+
+        // Display Recent Activity.
+        function displayRecentActivity(history) {
+
+            const recentActivity =
+                document.getElementById("recentActivity");
+
+            recentActivity.replaceChildren();
+
+            const recentRecords = history.slice(0, 5);
+
+            if (recentRecords.length === 0) {
+
+                const message = document.createElement("p");
+
+                message.className = "text-muted mb-0";
+                message.textContent = "No recent activity yet.";
+
+                recentActivity.appendChild(message);
+
+                return;
+            }
+
+            recentRecords.forEach(item => {
+
+                const row = document.createElement("div");
+
+                row.className =
+                    "d-flex justify-content-between align-items-center border-bottom py-3 flex-wrap gap-2";
+
+                const details = document.createElement("div");
+
+                const title = document.createElement("strong");
+
+                title.textContent =
+                    `Password check #${item.id}`;
+
+                const date = document.createElement("small");
+
+                date.className = "text-muted d-block";
+                date.textContent = item.checked_at || "Date unavailable";
+
+                details.appendChild(title);
+                details.appendChild(date);
+
+                const badge = document.createElement("span");
+
+                badge.className =
+                    getStrengthBadgeClass(item.strength);
+
+                badge.textContent = item.strength || "Unknown";
+
+                row.appendChild(details);
+                row.appendChild(badge);
+
+                recentActivity.appendChild(row);
+
+            });
+        }
+
+        // Update Summary Cards.
+        function updateSummaryCards(history, totalRecords) {
+
+            const strongTotal = history.filter(
+                item => normalizeText(item.strength) === "strong"
+            ).length;
+
+            const mediumTotal = history.filter(
+                item => normalizeText(item.strength) === "medium"
+            ).length;
+
+            const weakTotal = history.filter(
+                item => normalizeText(item.strength) === "weak"
+            ).length;
+
+            document.getElementById("totalChecks").textContent =
+                totalRecords ?? history.length;
+
+            document.getElementById("strongCount").textContent =
+                strongTotal;
+
+            document.getElementById("mediumCount").textContent =
+                mediumTotal;
+
+            document.getElementById("weakCount").textContent =
+                weakTotal;
+        }
+
+        // Update Doughnut Chart.
+        function updateStrengthChart(history) {
+
+            const strongTotal = history.filter(
+                item => normalizeText(item.strength) === "strong"
+            ).length;
+
+            const mediumTotal = history.filter(
+                item => normalizeText(item.strength) === "medium"
+            ).length;
+
+            const weakTotal = history.filter(
+                item => normalizeText(item.strength) === "weak"
+            ).length;
+
+            const chartCanvas =
+                document.getElementById("strengthChart");
+
+            if (strengthChart) {
+                strengthChart.destroy();
+            }
+
+            strengthChart = new Chart(chartCanvas, {
+
+                type: "doughnut",
+
+                data: {
+
+                    labels: ["Strong", "Medium", "Weak"],
+
+                    datasets: [{
+
+                        data: [
+                            strongTotal,
+                            mediumTotal,
+                            weakTotal
+                        ],
+
+                        backgroundColor: [
+                            "#198754",
+                            "#ffc107",
+                            "#dc3545"
+                        ],
+
+                        borderWidth: 2
+
+                    }]
+
+                },
+
+                options: {
+
+                    responsive: true,
+
+                    plugins: {
+
+                        legend: {
+                            position: "bottom"
+                        },
+
+                        title: {
+                            display: true,
+                            text: "Password Strength Results"
+                        }
+
+                    }
+
+                }
+
+            });
+        }
+
+        // Display Password History.
+        function renderHistory(records) {
+
+            const historyTable =
+                document.getElementById("historyTable");
+
+            historyTable.replaceChildren();
+
+            currentRecords = records;
+
+            const totalPages = Math.max(
+                1,
+                Math.ceil(currentRecords.length / recordsPerPage)
+            );
+
+            if (currentPage > totalPages) {
+                currentPage = totalPages;
+            }
+
+            const startIndex =
+                (currentPage - 1) * recordsPerPage;
+
+            const pageRecords = currentRecords.slice(
+                startIndex,
+                startIndex + recordsPerPage
+            );
+
+            if (currentRecords.length === 0) {
+
+                const row = document.createElement("tr");
+
+                const cell = document.createElement("td");
+
+                cell.colSpan = 5;
+
+                cell.className =
+                    "text-center text-muted py-3";
+
+                cell.textContent =
+                    "No matching password history found.";
+
+                row.appendChild(cell);
+
+                historyTable.appendChild(row);
+
+            } else {
+
+                pageRecords.forEach(item => {
+
+                    const row = document.createElement("tr");
+
+                    const values = [
+                        item.id,
+                        item.checked_at,
+                        item.password_length,
+                        `${item.criteria_met} / 5`
+                    ];
+
+                    values.forEach(value => {
+
+                        const cell = document.createElement("td");
+
+                        cell.textContent = value ?? "";
+
+                        row.appendChild(cell);
+
+                    });
+
+                    const strengthCell =
+                        document.createElement("td");
+
+                    strengthCell.style.minWidth = "110px";
+
+                    strengthCell.style.whiteSpace = "nowrap";
+
+                    const badge =
+                        document.createElement("span");
+
+                    badge.className =
+                        getStrengthBadgeClass(item.strength);
+
+                    badge.textContent =
+                        item.strength || "Unknown";
+
+                    strengthCell.appendChild(badge);
+
+                    row.appendChild(strengthCell);
+
+                    historyTable.appendChild(row);
+
+                });
 
             }
 
+            // Update Pagination Information.
+            document.getElementById("pageInfo").textContent =
+                `Page ${currentPage} of ${totalPages}`;
+
+            document.getElementById("previousPage").disabled =
+                currentPage === 1;
+
+            document.getElementById("nextPage").disabled =
+                currentPage === totalPages;
+
         }
 
-       
-// Clear Password History
-async function clearPasswordHistory() {
+        // Search and Filter Password History.
+        function filterHistory() {
 
-    const confirmed = confirm(
-        "Are you sure you want to delete all password checking history?"
-    );
+            const searchText = normalizeText(
+                document.getElementById("historySearch").value
+            );
 
-    if (!confirmed) {
-        return;
-    }
+            const selectedStrength = normalizeText(
+                document.getElementById("strengthFilter").value
+            );
 
-    try {
-        const response = await fetch("/api/password-history", {
-            method: "DELETE"
-        });
+            const startDate =
+                document.getElementById("startDate").value;
 
-        const data = await response.json();
+            const endDate =
+                document.getElementById("endDate").value;
 
-        if (data.success) {
-            alert("Password history cleared successfully!");
-            loadDashboard();
-        } else {
-            alert("Unable to clear password history.");
+            currentPage = 1;
+
+            const filteredHistory = passwordHistory.filter(item => {
+
+                const recordStrength =
+                    normalizeText(item.strength);
+
+                const recordDate =
+                    String(item.checked_at || "").substring(0, 10);
+
+                // Search across the record's relevant fields.
+                const searchableText = normalizeText([
+                    item.id,
+                    item.checked_at,
+                    item.password_length,
+                    item.criteria_met,
+                    item.strength
+                ].join(" "));
+
+                const matchesSearch =
+                    searchText === "" ||
+                    searchableText.includes(searchText);
+
+                const matchesStrength =
+                    selectedStrength === "all" ||
+                    recordStrength === selectedStrength;
+
+                const matchesStartDate =
+                    !startDate || recordDate >= startDate;
+
+                const matchesEndDate =
+                    !endDate || recordDate <= endDate;
+
+                return (
+                    matchesSearch &&
+                    matchesStrength &&
+                    matchesStartDate &&
+                    matchesEndDate
+                );
+
+            });
+
+            renderHistory(filteredHistory);
+
         }
 
-    } catch (error) {
-        console.error("Error clearing password history:", error);
-        alert("Something went wrong. Please try again.");
-    }
-}
+        // Pagination: Previous Page.
+        document.getElementById("previousPage").onclick = function () {
 
+            if (currentPage > 1) {
 
-// Export Password History as CSV
-async function exportPasswordHistory() {
+                currentPage--;
 
-    try {
-        const response = await fetch("/api/password-history");
+                renderHistory(currentRecords);
 
-        const data = await response.json();
+            }
 
-        if (!response.ok || !data.success) {
-            alert("Unable to export password history.");
-            return;
+        };
+
+        // Pagination: Next Page.
+        document.getElementById("nextPage").onclick = function () {
+
+            const totalPages = Math.ceil(
+                currentRecords.length / recordsPerPage
+            );
+
+            if (currentPage < totalPages) {
+
+                currentPage++;
+
+                renderHistory(currentRecords);
+
+            }
+
+        };
+
+        // Search Input.
+        document.getElementById("historySearch").oninput =
+            filterHistory;
+
+        // Strength Dropdown.
+        document.getElementById("strengthFilter").onchange =
+            filterHistory;
+
+        // Start Date Filter.
+        document.getElementById("startDate").onchange =
+            filterHistory;
+
+        // End Date Filter.
+        document.getElementById("endDate").onchange =
+            filterHistory;
+
+        // Clear Date Filters.
+        document.getElementById("clearDateFilter").onclick =
+            function () {
+
+                document.getElementById("startDate").value = "";
+
+                document.getElementById("endDate").value = "";
+
+                filterHistory();
+
+            };
+
+        // Clear Password History.
+        async function clearPasswordHistory() {
+
+            const confirmed = confirm(
+                "Are you sure you want to delete all password checking history?"
+            );
+
+            if (!confirmed) {
+                return;
+            }
+
+            try {
+
+                const response = await fetch(
+                    "/api/password-history",
+                    {
+                        method: "DELETE"
+                    }
+                );
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+
+                    alert("Password history cleared successfully!");
+
+                    // Clear search and date filters.
+                    document.getElementById("historySearch").value = "";
+
+                    document.getElementById("strengthFilter").value = "All";
+
+                    document.getElementById("startDate").value = "";
+
+                    document.getElementById("endDate").value = "";
+
+                    await loadDashboard();
+
+                } else {
+
+                    alert("Unable to clear password history.");
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "Error clearing password history:",
+                    error
+                );
+
+                alert("Something went wrong. Please try again.");
+
+            }
         }
 
-        if (data.history.length === 0) {
-            alert("There is no password history to export.");
-            return;
+        // Export Password History as CSV.
+        async function exportPasswordHistory() {
+
+            try {
+
+                const response =
+                    await fetch("/api/password-history");
+
+                const data = await response.json();
+
+                if (!response.ok || !data.success) {
+
+                    alert("Unable to export password history.");
+
+                    return;
+
+                }
+
+                const history = Array.isArray(data.history)
+                    ? data.history
+                    : [];
+
+                if (history.length === 0) {
+
+                    alert("There is no password history to export.");
+
+                    return;
+
+                }
+
+                const headers = [
+                    "ID",
+                    "Checked At",
+                    "Password Length",
+                    "Criteria Met",
+                    "Strength"
+                ];
+
+                const rows = history.map(item => [
+
+                    item.id,
+                    item.checked_at,
+                    item.password_length,
+                    item.criteria_met,
+                    item.strength
+
+                ]);
+
+                const csvContent = [
+
+                    headers,
+                    ...rows
+
+                ].map(row =>
+
+                    row.map(value =>
+
+                        `"${String(value ?? "").replace(/"/g, '""')}"`
+
+                    ).join(",")
+
+                ).join("\n");
+
+                const blob = new Blob(
+
+                    [csvContent],
+
+                    {
+                        type: "text/csv;charset=utf-8;"
+                    }
+
+                );
+
+                const url = URL.createObjectURL(blob);
+
+                const link = document.createElement("a");
+
+                link.href = url;
+
+                link.download =
+                    "SecurePass_Password_History.csv";
+
+                document.body.appendChild(link);
+
+                link.click();
+
+                link.remove();
+
+                URL.revokeObjectURL(url);
+
+                alert("Password history exported successfully!");
+
+            } catch (error) {
+
+                console.error("Export error:", error);
+
+                alert("Something went wrong while exporting.");
+
+            }
         }
 
-        const headers = [
-            "ID",
-            "Checked At",
-            "Password Length",
-            "Criteria Met",
-            "Strength"
-        ];
-
-        const rows = data.history.map(item => [
-            item.id,
-            item.checked_at,
-            item.password_length,
-            item.criteria_met,
-            item.strength
-        ]);
-
-        const csvContent = [
-            headers,
-            ...rows
-        ].map(row =>
-            row.map(value =>
-                `"${String(value).replace(/"/g, '""')}"`
-            ).join(",")
-        ).join("\n");
-
-        const blob = new Blob(
-            [csvContent],
-            { type: "text/csv;charset=utf-8;" }
-        );
-
-        const url = URL.createObjectURL(blob);
-
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "SecurePass_Password_History.csv";
-
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-
-        URL.revokeObjectURL(url);
-
-        alert("Password history exported successfully!");
-
-    } catch (error) {
-        console.error("Export error:", error);
-        alert("Something went wrong while exporting.");
-    }
-}
-
-
-// Load dashboard when page opens
-loadDashboard();
-
+        // Load Dashboard When Page Opens.
+        loadDashboard();
 
     </script>
 
